@@ -1,0 +1,23 @@
+diff -Naur tmp_orig/robot_attrition_0.5.15/control.lua tmp/robot_attrition_0.5.15/control.lua
+--- tmp_orig/robot_attrition_0.5.15/control.lua	2024-06-22 00:27:42
++++ tmp/robot_attrition_0.5.15/control.lua	2024-06-22 00:34:06
+@@ -120,6 +120,7 @@
+ end
+ 
+ function on_tick(event)
++  return -- disable attrition
+   --[[
+   slowest funtions is by far: network.logistic_robots[i]
+   so only do that once per explosion.
+diff -Naur tmp_orig/space-exploration_0.6.134/scripts/meteor.lua tmp/space-exploration_0.6.134/scripts/meteor.lua
+--- tmp_orig/space-exploration_0.6.134/scripts/meteor.lua	2024-06-22 00:27:43
++++ tmp/space-exploration_0.6.134/scripts/meteor.lua	2024-06-22 00:29:36
+@@ -1205,7 +1205,7 @@
+     end
+   end
+ end
+-Event.addListener("on_nth_tick_1800", Meteor.on_nth_tick_1800) -- 30s
++-- Event.addListener("on_nth_tick_1800", Meteor.on_nth_tick_1800) -- 30s # patched to remove completely
+ 
+ ---Handles the player modifying a meteor-related setting.
+ ---@param event EventData.on_runtime_mod_setting_changed Event data
